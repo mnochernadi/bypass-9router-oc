@@ -1,0 +1,1 @@
+{"name":"bypass-9router-oc","version":"1.0.0","private":true,"description":"Rotating v2ray exits in front of 9router OpenCode Free","main":"server.js","scripts":{"start":"node server.js","setup":"node lib/setup.js"},"engines":{"node":">=20"},"license":"MIT"}

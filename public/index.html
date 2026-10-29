@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>bypass-9router-oc</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <h1>bypass-9router-oc <span>rotating exits in front of 9router</span></h1>
+  <span id="poolinfo" class="badge">pool</span>
+  <span class="spacer"></span>
+  <button id="refresh">Rebuild pool</button>
+</header>
+
+<main>
+  <div>
+    <section>
+      <h2>Request</h2>
+      <textarea id="prompt" rows="3" placeholder="say OK"></textarea>
+      <div class="row">
+        <button id="run" class="primary">Send</button>
+        <span class="hint">forwarded through the current exit; rotates on a limit</span>
+      </div>
+      <pre id="out">ready.</pre>
+    </section>
+
+    <section>
+      <h2>Exits</h2>
+      <table>
+        <thead><tr><th></th><th>exit</th><th>state</th><th></th></tr></thead>
+        <tbody id="pool"></tbody>
+      </table>
+      <div class="hint">parked exits are skipped until the next refresh</div>
+    </section>
+  </div>
+
+  <div>
+    <section>
+      <h2>Connect</h2>
+      <label>endpoint</label>
+      <input id="endpoint" readonly>
+      <label>api key</label>
+      <input id="apikey" readonly>
+      <div class="row"><button id="copyEndpoint">Copy url</button><button id="copyKey">Copy key</button></div>
+      <div class="hint">point a harness here, or point 9router's proxy pool at the rotating proxy below.</div>
+    </section>
+
+    <section>
+      <h2>Settings</h2>
+      <label>9router upstream</label>
+      <input id="upstream">
+      <label>model</label>
+      <input id="model">
+      <label>rotating proxy port (for 9router's pool)</label>
+      <input id="proxyPort" type="number">
+      <label>subscriptions</label>
+      <textarea id="subs" rows="3"></textarea>
+      <div class="row"><button id="save">Save</button></div>
+    </section>
+
+    <section>
+      <h2>Log</h2>
+      <pre id="log"></pre>
+    </section>
+  </div>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>
